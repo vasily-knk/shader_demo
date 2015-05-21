@@ -1,0 +1,7 @@
+out/
+*.opensdf
+*.suo
+*.vcxproj
+*.user
+*.pdb
+*.sdf
