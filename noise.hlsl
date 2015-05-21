@@ -51,7 +51,6 @@ struct multi_noise_t
     int num_octaves;
 };
 
-
 float tune_noise(in float val, in noise_tuning_t tuning)
 {
     val = smoothstep(tuning.edge1, tuning.edge2, val);
