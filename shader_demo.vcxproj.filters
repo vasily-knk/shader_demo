@@ -24,27 +24,18 @@
     <ClCompile Include="stdafx.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="demo_impl.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="demo.h">
+    <ClInclude Include="noise.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="vertex_shader.hlsl">
-      <Filter>shaders</Filter>
-    </None>
-    <None Include="pixel_shader.hlsl">
-      <Filter>shaders</Filter>
-    </None>
-    <None Include="noise.hlsl">
-      <Filter>shaders</Filter>
-    </None>
+    <None Include="vertex_shader.hlsl" />
+    <None Include="noise.hlsl" />
+    <None Include="pixel_shader.hlsl" />
   </ItemGroup>
 </Project>

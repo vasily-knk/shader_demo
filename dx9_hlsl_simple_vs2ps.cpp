@@ -1,23 +1,4 @@
-//-----------------------------------------------------------------------------
-//           Name: dx9_hlsl_simple_vs2ps.cpp
-//         Author: Kevin Harris
-//  Last Modified: 04/15/05
-//    Description: This sample demonstrates how to write both a simple Vertex 
-//                 and Pixel Shader using Direct3D's HLSL. The sample should be 
-//                 considered a starting point or framework for more advanced 
-//                 samples.
-//
-//   Control Keys: F1 - Toggle usage of vertex and pixel shaders.
-//
-// Note: The pixel shader has been changed slightly from what the 
-//       fixed-function pipeline does by default so you can see a noticeable 
-//       change when toggling the shaders on and off. Instead of modulating 
-//       the vertex color with the texture's texel, the pixel shader adds the 
-//       two together, which causes the pixel shader to produce a brighter, 
-//       washed-out image. This modification can be switched back in the pixel 
-//       shader file.
-//-----------------------------------------------------------------------------
-
+//#include "noise.h"
 
 //-----------------------------------------------------------------------------
 // GLOBALS
@@ -395,11 +376,15 @@ void render( void )
         {
             float t = float(timeGetTime()) * 0.001f;
             g_Keeper.pConstantTablePS->SetFloat(g_Keeper.pd3dDevice, "time", t);
+            g_Keeper.pConstantTablePS->SetFloat(g_Keeper.pd3dDevice, "time", t);
         }
 
         g_Keeper.pd3dDevice->SetVertexDeclaration( g_Keeper.pVertexDeclaration );
         g_Keeper.pd3dDevice->SetVertexShader( g_Keeper.pVertexShader );
         g_Keeper.pd3dDevice->SetTexture( 0, g_Keeper.pTexture );
+        g_Keeper.pd3dDevice->SetSamplerState(0, D3DSAMP_MIPFILTER, D3DTEXF_ANISOTROPIC);
+
+
         g_Keeper.pd3dDevice->SetPixelShader( g_Keeper.pPixelShader );
 	    g_Keeper.pd3dDevice->SetFVF( Vertex::FVF_Flags );
         g_Keeper.pd3dDevice->SetStreamSource( 0, g_Keeper.pVertexBuffer, 0,sizeof(Vertex) );
